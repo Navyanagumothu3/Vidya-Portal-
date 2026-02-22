@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vidyaportal-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vidyaportal
+  template:
+    metadata:
+      labels:
+        app: vidyaportal
+    spec:
+      containers:
+      - name: vidyaportal
+        image: navyanagumothu/vidyaportal:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vidyaportal-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: vidyaportal
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
