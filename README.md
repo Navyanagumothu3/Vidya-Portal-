@@ -1,73 +1,67 @@
-# Welcome to your Lovable project
+🎯 Project Overview
 
-## Project info
+VidyaPortal is a responsive academic web portal front-end designed for students, faculty, and administrators.
+It provides login pages, dashboards, notifications, and course materials using HTML, CSS, and JavaScript.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Problem Statement: Deploy a containerized front-end web application using Docker and Kubernetes, hosted on Cloud
 
-## How can I edit this code?
+<img width="1893" height="853" alt="{9821B863-3707-4B31-BD48-4E375B995560}" src="https://github.com/user-attachments/assets/f8c91d7b-4657-44cb-990e-26c2c494d7ff" />
+<img width="1893" height="873" alt="{5CB0A3B6-DC70-4FB4-8ACB-5D6F0DCEF7D7}" src="https://github.com/user-attachments/assets/44ceb77f-28e7-4b1b-8de1-3ecb60a18421" />
+<img width="1883" height="864" alt="{F86C2CBC-78CE-4633-9F64-84EE7A686D6B}" src="https://github.com/user-attachments/assets/a0551731-4274-489d-9c77-d4881a7e367c" />
 
-There are several ways of editing your application.
 
-**Use Lovable**
+⚙️ Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Responsive login page for Students, Faculty, and Admins
 
-Changes made via Lovable will be committed automatically to this repo.
+Role-based dashboards (front-end only)
 
-**Use your preferred IDE**
+Access to notifications and course materials (UI mockup)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Profile and dashboard navigation menus
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Works on desktop and mobile devices
 
-Follow these steps:
+🛠 Technology Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Frontend: HTML, CSS, JavaScript
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Containerization: Docker
 
-# Step 3: Install the necessary dependencies.
-npm i
+Orchestration: Kubernetes
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Cloud Hosting: Microsoft Azure VM (Ubuntu)
 
-**Edit a file directly in GitHub**
+Flow Diagram:
+Local HTML/CSS/JS → Docker → DockerHub → Kubernetes → Azure VM → Public IP → Website
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+📝 Installation & Setup
+1️⃣ Clone Repository
+git clone https://github.com/your-username/VidyaPortal.git
+cd VidyaPortal
+2️⃣ Build Docker Image
+docker build -t vidyaportal .
+3️⃣ Push to DockerHub
+docker tag vidyaportal yourdockerhubusername/vidyaportal:latest
+docker push yourdockerhubusername/vidyaportal:latest
+4️⃣ Deploy on Kubernetes
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+5️⃣ Access Application
+Open browser: http://20.40.47.178/dashboard
 
-**Use GitHub Codespaces**
+📁 Kubernetes Structure (Front-End)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+deployment.yaml – Deploy front-end container
 
-## What technologies are used for this project?
+service.yaml – Expose front-end service
 
-This project is built with:
+configmaps/ – Optional front-end configs 
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🧑‍💻 Demo Accounts (UI Mockup)
+Role	Email
+Student	arjun@university.edu
 
-## How can I deploy this project?
+Faculty	sanjay@university.edu
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Admin	admin@university.edu
