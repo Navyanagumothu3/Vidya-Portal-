@@ -36,17 +36,22 @@ Flow Diagram:
 Local HTML/CSS/JS → Docker → DockerHub → Kubernetes → Azure VM → Public IP → Website
 
 📝 Installation & Setup
+
 1️⃣ Clone Repository
 git clone https://github.com/your-username/VidyaPortal.git
 cd VidyaPortal
+
 2️⃣ Build Docker Image
 docker build -t vidyaportal .
+
 3️⃣ Push to DockerHub
 docker tag vidyaportal yourdockerhubusername/vidyaportal:latest
 docker push yourdockerhubusername/vidyaportal:latest
+
 4️⃣ Deploy on Kubernetes
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
+
 5️⃣ Access Application
 Open browser: http://20.40.47.178/dashboard
 
@@ -59,7 +64,9 @@ service.yaml – Expose front-end service
 configmaps/ – Optional front-end configs 
 
 🧑‍💻 Demo Accounts (UI Mockup)
+
 Role	Email
+
 Student	arjun@university.edu
 
 Faculty	sanjay@university.edu
